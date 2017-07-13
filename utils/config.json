@@ -11,5 +11,11 @@
     "server",
     "public",
     "private"
+  ],
+  "deleteDefaultFiles": [
+    "client/main.css",
+    "client/main.html",
+    "client/main.js",
+    "server/main.js"
   ]
 }
