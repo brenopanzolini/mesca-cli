@@ -19,22 +19,24 @@ const copyTemplates = (cmd) => {
   fs.copySync(path.resolve(__dirname, '../templates'), pwd + '/private/mesca/templates');
 }
 
-// Command action
-const action = function(args, callback) {
-  if(!util.isMeteorProject) {
-    this.log("Run 'init' within your Meteor project!");
-  } else {
-    generateDirStructure(this);
-    copyTemplates(this);
-
-    this.log('Initialized and scaffolding templates under private/mesca');
-    callback();
-  }
-}
-
 // Export command
 module.exports = (vorpal) => {
   vorpal
     .command('init', 'Initialize project for scaffolding (execute from within the project).')
-    .action(action);
+    .alias('i')
+    .validate(function (args) {
+      if(!util.isMeteorProject) {
+        this.log("Run 'init' within your Meteor project!");
+        return false;
+      }
+
+      return true;
+    })
+    .action(function (args, callback) {
+      generateDirStructure(this);
+      copyTemplates(this);
+
+      this.log('Initialized and scaffolding templates under private/mesca');
+      callback();
+    });
 }
