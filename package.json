@@ -1,0 +1,24 @@
+{
+  "name": "mesca-cli",
+  "version": "0.1.0",
+  "description": "Meteor scaffold CLI",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "mesca": "./bin/mesca"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenopanzolini/mesca-cli.git"
+  },
+  "author": "Breno Panzolini <bpanzolini@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/brenopanzolini/mesca-cli/issues"
+  },
+  "homepage": "https://github.com/brenopanzolini/mesca-cli#readme",
+  "license": "MIT",
+  "dependencies": {
+    "vorpal": "^1.12.0"
+  }
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+const vorpal = require('vorpal')();
+const interactive = process.argv[process.argv.length-1].endsWith('mesca');
+
+// Add commands
+vorpal
+  .use(require('../commands/init'));
+
+if (interactive) {
+  vorpal
+    .delimiter('mesca$')
+    .show();
+} else {
+  vorpal
+    .delimiter('')
+    .parse(process.argv);
+}
