@@ -36,7 +36,7 @@ module.exports = (vorpal) => {
     .option('-d, --delete', 'delete all default files')
     .validate(function (args) {
       if(!util.isMeteorProject) {
-        this.log("Run 'init' within your Meteor project!");
+        this.log("Run 'init' within your Meteor project");
         return false;
       }
 
