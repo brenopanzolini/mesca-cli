@@ -19,6 +19,7 @@
   "homepage": "https://github.com/brenopanzolini/mesca-cli#readme",
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^3.0.1",
     "vorpal": "^1.12.0"
   }
 }

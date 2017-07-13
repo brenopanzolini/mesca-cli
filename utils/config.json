@@ -1,0 +1,15 @@
+{
+  "baseDirStructure": [
+    "imports/startup/client",
+    "imports/startup/server",
+    "imports/api",
+    "imports/ui/components",
+    "imports/ui/layouts",
+    "imports/ui/pages",
+    "imports/ui/stylesheets",
+    "client",
+    "server",
+    "public",
+    "private"
+  ]
+}
