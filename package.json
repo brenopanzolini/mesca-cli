@@ -20,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^3.0.1",
+    "transfer-github": "^0.2.0",
     "vorpal": "^1.12.0"
   }
 }

@@ -5,6 +5,7 @@ const fs = require('fs-extra')
 
 const generateDirStructure = (cmd) => {
   cmd.log("Creating base directory structure");
+  cmd.log('');
 
   util.configs.baseDirStructure.map((dir) => {
     fs.ensureDirSync(path.resolve(pwd, dir));
@@ -13,6 +14,7 @@ const generateDirStructure = (cmd) => {
 }
 
 const copyTemplates = (cmd) => {
+  cmd.log('');
   cmd.log("Copying templates to private folder");
 
   fs.ensureDirSync(path.resolve(pwd, 'private/mesca/templates'));
@@ -20,7 +22,9 @@ const copyTemplates = (cmd) => {
 }
 
 const deleteDefaultFiles = (cmd) => {
+  cmd.log('');
   cmd.log("Removing default files");
+  cmd.log('');
 
   util.configs.deleteDefaultFiles.map((file) => {
     fs.removeSync(path.resolve(pwd, file));
@@ -50,7 +54,8 @@ module.exports = (vorpal) => {
         deleteDefaultFiles(this);
       }
 
-      this.log('Initialized and scaffolding templates under private/mesca');
+      this.log('');
+      this.log('Successfully initialized scaffolding templates');
       callback();
     });
 }

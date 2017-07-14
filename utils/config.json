@@ -17,5 +17,6 @@
     "client/main.html",
     "client/main.js",
     "server/main.js"
-  ]
+  ],
+  "gitBoilerplate": "brenopanzolini/meteor-boilerplate#master"
 }

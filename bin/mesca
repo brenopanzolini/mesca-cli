@@ -4,7 +4,9 @@ const interactive = process.argv[process.argv.length-1].endsWith('mesca');
 
 // Add commands
 vorpal
-  .use(require('../commands/init'));
+  .use(require('../commands/create'))
+  .use(require('../commands/init'))
+  .use(require('../commands/generate'));
 
 if (interactive) {
   vorpal
