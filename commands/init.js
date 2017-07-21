@@ -21,7 +21,7 @@ const copyTemplates = (cmd) => {
   fs.copySync(path.resolve(__dirname, '../templates'), pwd + '/private/mesca/templates');
 }
 
-const deleteDefaultFiles = (cmd) => {
+const removeDefaultFiles = (cmd) => {
   cmd.log('');
   cmd.log("Removing default files");
   cmd.log('');
@@ -37,7 +37,7 @@ module.exports = (vorpal) => {
   vorpal
     .command('init', 'Initialize project for scaffolding (execute from within the project).')
     .alias('i')
-    .option('-d, --delete', 'delete all default files')
+    .option('-r, --remove', 'remove all default files')
     .validate(function (args) {
       if(!util.isMeteorProject) {
         this.log("Run 'init' within your Meteor project");
@@ -50,8 +50,8 @@ module.exports = (vorpal) => {
       generateDirStructure(this);
       copyTemplates(this);
 
-      if(args.options.delete){
-        deleteDefaultFiles(this);
+      if(args.options.remove){
+        removeDefaultFiles(this);
       }
 
       this.log('');

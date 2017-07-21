@@ -9,7 +9,7 @@ module.exports = (vorpal) => {
     .command('generate [what] [name]', 'Generate templates.')
     .alias('g')
     .validate(function (args) {
-      if(!util.alreadyInit) {
+      if(!fs.existsSync(util.templatesFolder)) {
         this.log("Run 'mesca init' to use scaffolding");
         return false;
       } else if(args.what === undefined) {
