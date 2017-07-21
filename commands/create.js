@@ -19,6 +19,10 @@ const downloadGitProject = (cmd, projectName, projectPath) => {
   // Download GitHub project
   github.get(util.configs.gitBoilerplate, projectPath, function (err) {
 
+    // After download remove LICENSE and README files
+    fs.removeSync(path.resolve(projectPath, 'README.md'));
+    fs.removeSync(path.resolve(projectPath, 'LICENSE'));
+
     clearInterval(interval);
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
