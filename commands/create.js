@@ -18,17 +18,6 @@ const downloadGitProject = (cmd, projectName, projectPath) => {
 
   // Download GitHub project
   github.get(util.configs.gitBoilerplate, projectPath, function (err) {
-
-    // After download remove LICENSE and README files
-    fs.removeSync(path.resolve(projectPath, 'README.md'));
-    fs.removeSync(path.resolve(projectPath, 'LICENSE'));
-
-    // Change "name" in package.json file
-    const packageJsonPath = path.resolve(projectPath, "package.json");
-    let packageJson = fs.readJsonSync(packageJsonPath);
-    packageJson.name = projectName;
-    fs.writeJsonSync(packageJsonPath, packageJson, { spaces: '\t' });
-
     clearInterval(interval);
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
@@ -36,6 +25,8 @@ const downloadGitProject = (cmd, projectName, projectPath) => {
     if (err) {
       cmd.log('Error downloading GitHub project: ' + err);
     } else {
+      adjustProjectFiles(projectName, projectPath);
+      
       cmd.log('Successfully created your project');
       cmd.log('');
       cmd.log('     cd ' + projectName);
@@ -43,6 +34,18 @@ const downloadGitProject = (cmd, projectName, projectPath) => {
       cmd.log('     meteor npm install');
     }
   });
+}
+
+const adjustProjectFiles = (projectName, projectPath) => {
+  // Remove LICENSE and README files
+  fs.removeSync(path.resolve(projectPath, 'README.md'));
+  fs.removeSync(path.resolve(projectPath, 'LICENSE'));
+
+  // Change "name" in package.json file
+  const packageJsonPath = path.resolve(projectPath, "package.json");
+  let packageJson = fs.readJsonSync(packageJsonPath);
+  packageJson.name = projectName;
+  fs.writeJsonSync(packageJsonPath, packageJson, { spaces: '\t' });
 }
 
 // Export command
