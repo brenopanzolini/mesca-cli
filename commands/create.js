@@ -23,6 +23,12 @@ const downloadGitProject = (cmd, projectName, projectPath) => {
     fs.removeSync(path.resolve(projectPath, 'README.md'));
     fs.removeSync(path.resolve(projectPath, 'LICENSE'));
 
+    // Change "name" in package.json file
+    const packageJsonPath = path.resolve(projectPath, "package.json");
+    let packageJson = fs.readJsonSync(packageJsonPath);
+    packageJson.name = projectName;
+    fs.writeJsonSync(packageJsonPath, packageJson, { spaces: '\t' });
+
     clearInterval(interval);
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
