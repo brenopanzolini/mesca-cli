@@ -12,11 +12,12 @@
     "public",
     "private"
   ],
-  "deleteDefaultFiles": [
-    "client/main.css",
-    "client/main.html",
-    "client/main.js",
-    "server/main.js"
-  ],
-  "gitBoilerplate": "brenopanzolini/meteor-boilerplate#master"
+  "gitBoilerplate": "brenopanzolini/meteor-boilerplate#master",
+  "generate" : {
+    "api": [
+      { "source": "methods.js", "dest": "imports/api/__name" },
+      { "source": "model.js", "dest": "imports/api/__name" },
+      { "source": "publications.js", "dest": "imports/api/__name/server" }
+    ]
+  }
 }

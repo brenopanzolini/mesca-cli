@@ -4,6 +4,6 @@ const fs = require('fs-extra')
 
 exports.isMeteorProject = fs.existsSync(pwd + '/.meteor');
 
-exports.templatesFolder = pwd + '/private/mesca/templates';
+exports.templatesFolder = path.resolve(__dirname, '../templates');
 
 exports.configs = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../utils/config.json')));

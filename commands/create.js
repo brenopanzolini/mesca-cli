@@ -26,10 +26,11 @@ const downloadGitProject = (cmd, projectName, projectPath) => {
       cmd.log('Error downloading GitHub project: ' + err);
     } else {
       adjustProjectFiles(projectName, projectPath);
-      
+
       cmd.log('Successfully created your project');
       cmd.log('');
       cmd.log('     cd ' + projectName);
+      cmd.log('     mesca init');
       cmd.log('     meteor update');
       cmd.log('     meteor npm install');
     }
@@ -44,6 +45,7 @@ const adjustProjectFiles = (projectName, projectPath) => {
   // Change "name" in package.json file
   const packageJsonPath = path.resolve(projectPath, "package.json");
   let packageJson = fs.readJsonSync(packageJsonPath);
+
   packageJson.name = projectName;
   fs.writeJsonSync(packageJsonPath, packageJson, { spaces: '\t' });
 }
