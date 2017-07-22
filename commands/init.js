@@ -7,7 +7,7 @@ const generateDirStructure = (cmd) => {
   cmd.log("Creating base directory structure");
   cmd.log('');
 
-  util.configs.baseDirStructure.map((dir) => {
+  util.configs.baseDirStructure.forEach((dir) => {
     fs.ensureDirSync(path.resolve(pwd, dir));
     cmd.log('     ' + dir);
   });
@@ -26,7 +26,7 @@ const removeDefaultFiles = (cmd) => {
   cmd.log("Removing default files");
   cmd.log('');
 
-  util.configs.deleteDefaultFiles.map((file) => {
+  util.configs.deleteDefaultFiles.forEach((file) => {
     fs.removeSync(path.resolve(pwd, file));
     cmd.log('    ' + file);
   });
