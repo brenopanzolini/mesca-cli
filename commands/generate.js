@@ -3,6 +3,10 @@ const fs = require('fs-extra')
     , util = require('../utils/util')
     , pwd = process.cwd();
 
+const generateApi = (name) => {
+  
+}
+
 // Export command
 module.exports = (vorpal) => {
   vorpal
@@ -23,6 +27,12 @@ module.exports = (vorpal) => {
       return true;
     })
     .action(function (args, callback) {
+      swith(args.what.toLowerCase()) {
+        case 'api':
+          generateApi(args.name);
+          break
+      }
+
       callback();
     });
 }
