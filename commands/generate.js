@@ -17,8 +17,10 @@ const generateApi = (cmd, name) => {
 
     FileManager.generate(path.resolve(util.templatesFolder, 'api'), util.configs.generate.api, replaces);
 
-    // Add publications and methods to api.js
+    // Add model, publications and methods to api.js
     const apiJs = path.resolve(pwd, 'imports/api/api.js');
+    fs.appendFileSync(apiJs, `// ${name}\n`);
+    fs.appendFileSync(apiJs, `import './${name}/model.js';\n`);
     fs.appendFileSync(apiJs, `import './${name}/methods.js';\n`);
     fs.appendFileSync(apiJs, `import './${name}/server/publications.js';\n\n`);
   } else {
