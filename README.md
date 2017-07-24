@@ -29,6 +29,7 @@ imports/
   startup/
     client/
     server/
+      api.js                     # defines all the collections, publications and methods
       index.js
 
   api/
@@ -37,7 +38,6 @@ imports/
         publications.js        # contacts-related publications
       model.js                 # definition of the collection
       methods.js               # methods related to contacts
-    api.js                     # defines all the collections, publications and methods
 
   ui/
     components/
@@ -54,7 +54,7 @@ server/
 
 public/                        # for static files
 
-private/ 
+private/
 ```
 
 ### Generate templates:

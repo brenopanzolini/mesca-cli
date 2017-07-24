@@ -57,9 +57,9 @@ module.exports = (vorpal) => {
     .alias('c')
     .validate(function (args) {
       if(args.projectName === undefined) {
-        this.log('Need to inform the project [projectName]');
+        this.log('Need to inform the [projectName]');
         return false;
-      } else if(fs.existsSync(path.resolve(pwd, args.name))) {
+      } else if(fs.existsSync(path.resolve(pwd, args.projectName))) {
         this.log('Directory already exists. Remove it or change the [projectName]');
         return false;
       }
