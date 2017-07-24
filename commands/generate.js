@@ -20,7 +20,6 @@ const generateApi = (cmd, name) => {
     // Add model, publications and methods to api.js
     const apiJs = path.resolve(pwd, 'imports/startup/server/api.js');
     fs.appendFileSync(apiJs, `// ${name}\n`);
-    fs.appendFileSync(apiJs, `import '../../api/${name}/model.js';\n`);
     fs.appendFileSync(apiJs, `import '../../api/${name}/methods.js';\n`);
     fs.appendFileSync(apiJs, `import '../../api/${name}/server/publications.js';\n\n`);
   } else {
