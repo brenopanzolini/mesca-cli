@@ -67,7 +67,7 @@ $ mesca generate [what] [name]
 
 You can generate the following templates:
 
-#### api
+#### 1. api
 
 ```sh
 $ mesca generate api [name]
