@@ -2,7 +2,7 @@ Mesca
 ===
 A Meteor scaffold CLI.
 
-![mesca](https://user-images.githubusercontent.com/29805089/28504803-343824d2-6ff3-11e7-9c26-6c8c77920959.png)
+![mesca](https://user-images.githubusercontent.com/29805089/28504837-9a7d38fe-6ff3-11e7-92ff-f1107938008e.png)
 
 ## How to use:
 
