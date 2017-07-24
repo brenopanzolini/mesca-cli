@@ -53,23 +53,23 @@ const adjustProjectFiles = (projectName, projectPath) => {
 // Export command
 module.exports = (vorpal) => {
   vorpal
-    .command('create [name]', 'Creates a new project with the Meteor Boilerplate.')
+    .command('create [projectName]', 'Creates a new project with the Meteor Boilerplate.')
     .alias('c')
     .validate(function (args) {
-      if(args.name === undefined) {
-        this.log('Need to inform the project [name]');
+      if(args.projectName === undefined) {
+        this.log('Need to inform the project [projectName]');
         return false;
       } else if(fs.existsSync(path.resolve(pwd, args.name))) {
-        this.log('Directory already exists. Remove it or change the project [name]');
+        this.log('Directory already exists. Remove it or change the [projectName]');
         return false;
       }
 
       return true;
     })
     .action(function (args, callback) {
-      const projectPath = path.resolve(pwd, args.name);
+      const projectPath = path.resolve(pwd, args.projectName);
       fs.mkdirSync(projectPath);
 
-      downloadGitProject(this, args.name, projectPath);
+      downloadGitProject(this, args.projectName, projectPath);
     });
 }
