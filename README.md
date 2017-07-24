@@ -59,8 +59,18 @@ private/
 
 ### Generate templates:
 
-Generates boilerplate templates for your project.
+Generate templates for your project.
 
 ```sh
 $ mesca generate [what] [name]
 ```
+
+You can generate the following templates:
+
+#### api
+
+```sh
+$ mesca generate api [name]
+```
+
+This creates all the boilerplate for your domain logic inside *imports/api* folder structure.
