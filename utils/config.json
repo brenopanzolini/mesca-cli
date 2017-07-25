@@ -16,7 +16,7 @@
   "generate" : {
     "api": [
       { "source": "methods.js", "dest": "imports/api/__name/methods.js" },
-      { "source": "model.js", "dest": "imports/api/__name/__modelName.js" },
+      { "source": "collection.js", "dest": "imports/api/__name/__modelName.js" },
       { "source": "publications.js", "dest": "imports/api/__name/server/publications.js" }
     ]
   }
