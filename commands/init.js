@@ -13,14 +13,6 @@ const generateDirStructure = (cmd) => {
   });
 }
 
-const copyTemplates = (cmd) => {
-  cmd.log('');
-  cmd.log("Copying templates to private folder");
-
-  //fs.ensureDirSync(path.resolve(pwd, 'private/mesca/templates'));
-  //fs.copySync(path.resolve(__dirname, '../templates'), pwd + '/private/mesca/templates');
-}
-
 // Export command
 module.exports = (vorpal) => {
   vorpal
@@ -36,7 +28,6 @@ module.exports = (vorpal) => {
     })
     .action(function (args, callback) {
       generateDirStructure(this);
-      copyTemplates(this);
 
       this.log('');
       this.log('Successfully initialized scaffolding templates');
