@@ -39,6 +39,8 @@ imports/
       model.js                 # definition of the collection
       methods.js               # methods related to contacts
 
+  modules/
+
   ui/
     components/
     layouts/
