@@ -14,12 +14,12 @@ __modelName.attachSchema(__modelName.schema);
 __modelName.deny({
   insert: () => true,
   update: () => true,
-  remove: () => true
+  remove: () => true,
 });
 
 // Public fields
 __modelName.publicFields = {
   
-}
+};
 
 export default __modelName;
