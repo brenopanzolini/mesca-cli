@@ -22,4 +22,9 @@ __modelName.publicFields = {
   
 };
 
+// Helpers
+__modelName.helpers({
+  
+});
+
 export default __modelName;
