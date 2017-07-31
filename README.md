@@ -4,7 +4,7 @@ A Meteor scaffold CLI.
 
 ![mesca](https://user-images.githubusercontent.com/29805089/28504837-9a7d38fe-6ff3-11e7-92ff-f1107938008e.png)
 
-## How to use:
+## How to use
 
 ### Create project:
 
@@ -38,4 +38,4 @@ You can generate the following templates:
 $ mesca generate api [name]
 ```
 
-This creates all the boilerplate for your domain logic inside *imports/api* folder structure.
+This creates all the boilerplate for your domain logic inside *imports/api* folder.
