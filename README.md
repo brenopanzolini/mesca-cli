@@ -22,43 +22,6 @@ Initialize the recommended folder structure for your projects.
 $ mesca init
 ```
 
-The structure below is initialized:
-
-```sh
-imports/
-  startup/
-    client/
-    server/
-      api.js                     # defines all the collections, publications and methods
-      index.js
-
-  api/
-    contacts/                  # contacts domain logic
-      server/
-        publications.js        # contacts-related publications
-      model.js                 # definition of the collection
-      methods.js               # methods related to contacts
-
-  modules/
-
-  ui/
-    components/
-    layouts/
-    pages/
-    stylesheets/
-
-client/
-  main.html                    # render-target for React components
-  main.js                      # client entry point, imports all client code
-
-server/
-  main.js                      # server entry point, imports all server code
-
-public/                        # for static files
-
-private/
-```
-
 ### Generate templates:
 
 Generate templates for your project.
