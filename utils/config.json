@@ -11,7 +11,8 @@
     "client",
     "server",
     "public",
-    "private"
+    "private",
+    "tests"
   ],
   "gitBoilerplate": "brenopanzolini/meteor-boilerplate#master",
   "generate" : {
