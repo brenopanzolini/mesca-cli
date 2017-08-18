@@ -17,7 +17,7 @@ const generateApi = (cmd, name) => {
 
     FileManager.generate(path.resolve(util.templatesFolder, 'api'), util.configs.generate.api, replaces);
 
-    // Add model, publications and methods to api.js
+    // Add model, publications and methods to startup api.js file
     const apiJs = path.resolve(pwd, 'imports/startup/server/api.js');
     fs.appendFileSync(apiJs, `// ${name}\n`);
     fs.appendFileSync(apiJs, `import '../../api/${name}/methods.js';\n`);
@@ -25,6 +25,22 @@ const generateApi = (cmd, name) => {
   } else {
     cmd.log(`Api ${name} already exists.`);
   }
+}
+
+const generateChimp = (cmd, name) => {
+  const destination = path.resolve(pwd, 'tests', `${name}.js`);
+
+  if(!fs.existsSync(destination)) {
+    cmd.log(`Generating Chimp Test ${name}`);
+
+    // Generate test file
+    const replaces = [{ what: '__name', for: name },
+                      { what: '__testName', for: name.charAt(0).toUpperCase() + name.slice(1) }];
+
+    FileManager.generate(path.resolve(util.templatesFolder, 'chimp'), util.configs.generate.chimp, replaces);
+  } else {
+    cmd.log(`Chimp test ${name} already exists.`);    
+  } 
 }
 
 // Export command
@@ -52,7 +68,10 @@ module.exports = (vorpal) => {
       switch(args.what.toLowerCase()) {
         case 'api':
           generateApi(this, name);
-          break
+          break;
+        case 'chimp':
+          generateChimp(this, name);
+          break;
       }
 
       callback();

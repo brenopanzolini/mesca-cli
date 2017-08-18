@@ -20,6 +20,9 @@
       { "source": "methods.js", "dest": "imports/api/__name/methods.js" },
       { "source": "collection.js", "dest": "imports/api/__name/__modelName.js" },
       { "source": "publications.js", "dest": "imports/api/__name/server/publications.js" }
+    ],
+    "chimp": [
+      { "source": "test.js", "dest": "tests/__name.js" }
     ]
   }
 }
