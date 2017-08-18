@@ -39,3 +39,11 @@ $ mesca generate api [name]
 ```
 
 This creates all the boilerplate for your domain logic inside *imports/api* folder.
+
+#### 2. chimp
+
+```sh
+$ mesca generate chimp [test_name]
+```
+
+This creates a test file for acceptance tests using Chimp and Mocha under *tests* folder.
